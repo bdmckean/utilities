@@ -1,12 +1,17 @@
+''' code snippet to generate a random password '''
 import random
 import sys
 
-def gen_password(pw_len=8):
+def gen_password(password_length=8):
+    '''
+    Generates a password of length password_length
+    INPUT: password_length (integer)
+    '''
     letters = "abcdefghijklmnopqrstuvwxyz"
     symbols = '!@'
     mypw = ""
 
-    for i in range(pw_len):
+    for i in range(password_length):
         next_index = random.randrange(len(letters))
         mypw = mypw + letters[next_index]
 
@@ -28,8 +33,9 @@ def gen_password(pw_len=8):
     return(mypw)
 
 if __name__ == '__main__':
-    pw_len = 8
+    # Genrate 8 digit password if no length input
+    password_length = 8
     if len(sys.argv) > 1:
-        pw_len = int(sys.argv[1])
-    pw = gen_password(pw_len)
+        password_length = int(sys.argv[1])
+    pw = gen_password(password_length)
     print (pw)
