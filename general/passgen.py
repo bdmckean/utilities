@@ -3,6 +3,7 @@ import sys
 
 def gen_password(pw_len=8):
     letters = "abcdefghijklmnopqrstuvwxyz"
+    symbols = '!@'
     mypw = ""
 
     for i in range(pw_len):
@@ -18,6 +19,11 @@ def gen_password(pw_len=8):
     for i in range(random.randrange(1,3)):
         replace_index = random.randrange(len(mypw)//2,len(mypw))
         mypw = mypw[0:replace_index] + mypw[replace_index].upper() + mypw[replace_index+1:]
+
+    # replace a letter with a symbol
+    replace_index = random.randrange(len(mypw)//2,len(mypw))
+    symbol = symbols[random.randrange(2)]   
+    mypw = mypw[0:replace_index] + symbol + mypw[replace_index+1:]  
 
     return(mypw)
 
