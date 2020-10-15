@@ -12,8 +12,8 @@ out_file = 's3_file_list_v3_{0}.txt'.format(timestamp)
 bucket_file = 's3_bucket_list_v3_{0}.txt'.format(timestamp)
 #print(response)
 
-#limit = 1000000000
-limit = 10
+limit = 1000000000
+#limit = 10
 count = 0
 bucket_size = 0
 
